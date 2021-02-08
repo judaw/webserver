@@ -22,16 +22,16 @@ RUN apt-get install apache2 -y && a2enmod rewrite ssl
 # MYSQL CLIENT TO CONNECT BACK TO NETWORKED MYSQL CONTAINER
 RUN apt-get install mysql-client -y
 
-# PHP NEEDED - DEFAULT UBUNTU IS PHP7.2
-# RUN apt-get update -y --fix-missing
-# RUN apt-get install -y php
-# RUN apt-get install -y php-common	php-curl	php-gd	php-xml	php-mysql	php-mbstring	php-zip  php-ldap php-imagick php-soap
-# RUN apt-get install -y libapache2-mod-php
-# RUN service apache2 restart
+# PHP NEEDED - DEFAULT UBUNTU
+RUN apt-get update -y --fix-missing
+RUN apt-get install -y php
+RUN apt-get install -y php-common	php-curl	php-gd	php-xml	php-mysql	php-mbstring	php-zip  php-ldap php-imagick php-soap
+RUN apt-get install -y libapache2-mod-php
+RUN service apache2 restart
 
 # GET ALTERNATIVE PHP VERSIONS IF YOU DON'T WANT STANDARD
-RUN apt-get install -y software-properties-common apt-utils language-pack-en-base
-RUN LC_ALL=en_US.UTF-8 add-apt-repository ppa:ondrej/php
+# RUN apt-get install -y software-properties-common apt-utils language-pack-en-base
+# RUN LC_ALL=en_US.UTF-8 add-apt-repository ppa:ondrej/php
 
 # PHP 5.6
 # RUN apt-get update -y --fix-missing
@@ -48,15 +48,15 @@ RUN LC_ALL=en_US.UTF-8 add-apt-repository ppa:ondrej/php
 # RUN update-alternatives --set php /usr/bin/php7.1 && service apache2 restart
 
 # PHP 7.3
-RUN apt-get update -y --fix-missing
-RUN apt-get install -y php7.3
-RUN apt-get install -y php7.3-common	php7.3-curl	php7.3-gd	php7.3-xml	php7.3-mysql	php7.3-mbstring	php7.3-zip  php7.3-ldap php7.3-imagick
-RUN apt-get install -y libapache2-mod-php7.3
-RUN update-alternatives --set php /usr/bin/php7.3 && service apache2 restart
+# RUN apt-get update -y --fix-missing
+# RUN apt-get install -y php7.3
+# RUN apt-get install -y php7.3-common	php7.3-curl	php7.3-gd	php7.3-xml	php7.3-mysql	php7.3-mbstring	php7.3-zip  php7.3-ldap php7.3-imagick
+# RUN apt-get install -y libapache2-mod-php7.3
+# RUN update-alternatives --set php /usr/bin/php7.3 && service apache2 restart
 
 # NPM
-RUN apt-get install npm -y
-RUN npm install -g node-sass
+# RUN apt-get install npm -y
+# RUN npm install -g node-sass
 # node-sass --output-style expanded --output /app/docroot/sites/scl/themes/custom/cwd_scl/css --source-map true
 
 
