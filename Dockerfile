@@ -57,7 +57,7 @@ RUN service apache2 restart
 # NPM
 RUN apt-get install npm -y
 RUN npm install -g node-sass
-node-sass --output-style expanded --output /app/docroot/sites/scl/themes/custom/cwd_scl/css --source-map true
+# node-sass --output-style expanded --output /app/docroot/sites/scl/themes/custom/cwd_scl/css --source-map true
 
 
 # COMPOSER INSTALL
