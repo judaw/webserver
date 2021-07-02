@@ -55,9 +55,9 @@ RUN service apache2 restart
 # RUN update-alternatives --set php /usr/bin/php7.3 && service apache2 restart
 
 # NPM
-# RUN apt-get install npm -y
-# RUN npm install -g node-sass
-# node-sass --output-style expanded --output /app/docroot/sites/scl/themes/custom/cwd_scl/css --source-map true
+RUN apt-get install npm -y
+RUN npm install -g node-sass
+node-sass --output-style expanded --output /app/docroot/sites/scl/themes/custom/cwd_scl/css --source-map true
 
 
 # COMPOSER INSTALL
